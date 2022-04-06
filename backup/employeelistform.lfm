@@ -37,7 +37,7 @@ object frmEmployeeList: TfrmEmployeeList
     ClientHeight = 90
     ClientWidth = 1135
     TabOrder = 1
-    object Button1: TButton
+    object btnCreate: TButton
       Left = 616
       Height = 31
       Top = 32
@@ -45,7 +45,7 @@ object frmEmployeeList: TfrmEmployeeList
       Caption = 'Create'
       TabOrder = 0
     end
-    object Button2: TButton
+    object btnUpdate: TButton
       Left = 752
       Height = 31
       Top = 32
@@ -53,7 +53,7 @@ object frmEmployeeList: TfrmEmployeeList
       Caption = 'Update'
       TabOrder = 1
     end
-    object Button3: TButton
+    object btnDelete: TButton
       Left = 888
       Height = 31
       Top = 32
@@ -61,12 +61,13 @@ object frmEmployeeList: TfrmEmployeeList
       Caption = 'Delete'
       TabOrder = 2
     end
-    object Button4: TButton
+    object btnClose: TButton
       Left = 1016
       Height = 31
       Top = 32
       Width = 94
       Caption = 'Close'
+      OnClick = btnCloseClick
       TabOrder = 3
     end
   end
@@ -79,7 +80,7 @@ object frmEmployeeList: TfrmEmployeeList
     ClientHeight = 63
     ClientWidth = 1135
     TabOrder = 2
-    object Edit1: TEdit
+    object edt_SearchKeyword: TEdit
       Left = 72
       Height = 28
       Top = 16
@@ -94,7 +95,7 @@ object frmEmployeeList: TfrmEmployeeList
       Caption = 'Search:'
       ParentColor = False
     end
-    object Button5: TButton
+    object btnSearch: TButton
       Left = 320
       Height = 31
       Top = 16

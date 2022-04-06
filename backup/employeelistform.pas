@@ -13,17 +13,18 @@ type
   { TfrmEmployeeList }
 
   TfrmEmployeeList = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    Button5: TButton;
+    btnCreate: TButton;
+    btnUpdate: TButton;
+    btnDelete: TButton;
+    btnClose: TButton;
+    btnSearch: TButton;
     DBGrid1: TDBGrid;
-    Edit1: TEdit;
+    edt_SearchKeyword: TEdit;
     Label1: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
+    procedure btnCloseClick(Sender: TObject);
   private
 
   public
@@ -36,6 +37,13 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TfrmEmployeeList }
+
+procedure TfrmEmployeeList.btnCloseClick(Sender: TObject);
+begin
+  Close;
+end;
 
 end.
 
