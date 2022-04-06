@@ -17,7 +17,8 @@
       <Unit1>
         <Filename Value="employeelistform.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="frmEmployeeList"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="EmployeeListForm"/>
         <IsVisibleTab Value="True"/>

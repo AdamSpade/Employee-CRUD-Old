@@ -15,11 +15,11 @@
         <UsageCount Value="20"/>
       </Unit0>
       <Unit1>
-        <Filename Value="unit1.pas"/>
+        <Filename Value="employeelistform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit1"/>
+        <UnitName Value="EmployeeListForm"/>
         <IsVisibleTab Value="True"/>
         <CursorPos X="63" Y="26"/>
         <UsageCount Value="20"/>
