@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, EmployeeListForm
+  Forms, pgdac10, EmployeeListForm, DataModule
   { you can add units after this };
 
 {$R *.res}

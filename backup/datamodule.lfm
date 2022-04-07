@@ -1,7 +1,22 @@
-object DataModule1: TDataModule1
+object DM: TDM
   OldCreateOrder = False
-  Height = 277
-  HorizontalOffset = 765
-  VerticalOffset = 256
-  Width = 375
+  Height = 346
+  HorizontalOffset = 1288
+  VerticalOffset = 503
+  Width = 469
+  PPI = 120
+  object Connection: TPgConnection
+    Connected = True
+    LoginPrompt = False
+    Username = 'postgres'
+    Database = 'mockcompany'
+    Left = 56
+    Top = 40
+    EncryptedPassword = '8FFF9EFF8CFF8CFF88FF90FF8DFF9BFF'
+  end
+  object PgQuerySelect: TPgQuery
+    FilterOptions = []
+    Left = 176
+    Top = 40
+  end
 end

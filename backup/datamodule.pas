@@ -5,10 +5,15 @@ unit DataModule;
 interface
 
 uses
-  Classes, SysUtils, MyAcc;
+  Classes, SysUtils, PgAccess;
 
 type
-  TDataModule1 = class(TDataModule)
+
+  { TDM }
+
+  TDM = class(TDataModule)
+    Connection: TPgConnection;
+    PgQuerySelect: TPgQuery;
   private
 
   public
@@ -16,7 +21,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  DM: TDM;
 
 implementation
 

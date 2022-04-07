@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBGrids,
-  StdCtrls;
+  StdCtrls, PgAccess;
 
 type
 
@@ -24,6 +24,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
+    PgDataSource1: TPgDataSource;
     procedure btnCloseClick(Sender: TObject);
   private
 
@@ -35,6 +36,7 @@ var
   frmEmployeeList: TfrmEmployeeList;
 
 implementation
+
 
 {$R *.lfm}
 
