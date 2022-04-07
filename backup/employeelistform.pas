@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBGrids,
-  StdCtrls, PgAccess, DataModule.PgQuerySelect;
+  StdCtrls, PgAccess;
 
 type
 
@@ -26,6 +26,7 @@ type
     Panel3: TPanel;
     PgDataSource1: TPgDataSource;
     procedure btnCloseClick(Sender: TObject);
+    //procedure FormShow(Sender: TObject);
   private
 
   public
@@ -37,7 +38,7 @@ var
 
 implementation
 uses
-  DataModule.PgQuerySelect;
+  DataModule;
 
 {$R *.lfm}
 
@@ -47,6 +48,19 @@ procedure TfrmEmployeeList.btnCloseClick(Sender: TObject);
 begin
   Close;
 end;
+
+//procedure TfrmEmployeeList.FormShow(Sender: TObject);
+//var
+//  active:boolean;
+//begin
+//  with DM.PgQuerySelect do;
+//    begin
+//      DM.PgQuerySelect.Active:=false;
+//      DM.PgQuerySelect.SQL.Clear;
+//      DM.PgQuerySelect.SQL.Text:= 'SELECT id, last_name, first_name, email_address FROM EMPLOYEES'; //Alternative - sql.add('');
+//      DM.PgQuerySelect.Active:=true;
+//    end;
+//end;
 
 end.
 

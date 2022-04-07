@@ -1,0 +1,123 @@
+object frmEmployeeList: TfrmEmployeeList
+  Left = 54
+  Height = 542
+  Top = 75
+  Width = 908
+  Caption = 'Employee List'
+  ClientHeight = 542
+  ClientWidth = 908
+  LCLVersion = '2.0.12.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 420
+    Top = 50
+    Width = 908
+    Align = alClient
+    ClientHeight = 420
+    ClientWidth = 908
+    ParentFont = False
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 418
+      Top = 1
+      Width = 906
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = PgDataSource1
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 72
+    Top = 470
+    Width = 908
+    Align = alBottom
+    ClientHeight = 72
+    ClientWidth = 908
+    ParentFont = False
+    TabOrder = 1
+    object btnCreate: TButton
+      Left = 493
+      Height = 25
+      Top = 26
+      Width = 75
+      Caption = 'Create'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object btnUpdate: TButton
+      Left = 602
+      Height = 25
+      Top = 26
+      Width = 75
+      Caption = 'Update'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object btnDelete: TButton
+      Left = 710
+      Height = 25
+      Top = 26
+      Width = 75
+      Caption = 'Delete'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object btnClose: TButton
+      Left = 813
+      Height = 25
+      Top = 26
+      Width = 75
+      Caption = 'Close'
+      OnClick = btnCloseClick
+      ParentFont = False
+      TabOrder = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 908
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 908
+    ParentFont = False
+    TabOrder = 2
+    object edt_SearchKeyword: TEdit
+      Left = 58
+      Height = 23
+      Top = 13
+      Width = 189
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 13
+      Height = 15
+      Top = 13
+      Width = 38
+      Caption = 'Search:'
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnSearch: TButton
+      Left = 256
+      Height = 25
+      Top = 13
+      Width = 75
+      Caption = 'Search'
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object PgDataSource1: TPgDataSource
+    DataSet = DM.PgQuerySelect
+    Left = 38
+    Top = 490
+  end
+end
