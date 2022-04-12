@@ -16,7 +16,10 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  //Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmEmployeeList, frmEmployeeList);
+  Application.CreateForm(TfrmEmployeeDetails, frmEmployeeDetails);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.
 

@@ -1,8 +1,8 @@
 object DM: TDM
   OldCreateOrder = False
   Height = 277
-  HorizontalOffset = 1024
-  VerticalOffset = 537
+  HorizontalOffset = 1140
+  VerticalOffset = 611
   Width = 375
   object Connection: TPgConnection
     Connected = True
@@ -17,7 +17,7 @@ object DM: TDM
   object PgQuerySelect: TPgQuery
     Connection = Connection
     SQL.Strings = (
-      'SELECT id, last_name, first_name, email_address FROM EMPLOYEES'
+      ''
     )
     FilterOptions = []
     Left = 141

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBGrids,
-  StdCtrls, PgAccess;
+  StdCtrls{, PgAccess};
 
 type
 
@@ -26,7 +26,8 @@ type
     Panel3: TPanel;
     PgDataSource1: TPgDataSource;
     procedure btnCloseClick(Sender: TObject);
-    //procedure FormShow(Sender: TObject);
+    procedure btnCreateClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -37,10 +38,10 @@ var
   frmEmployeeList: TfrmEmployeeList;
 
 implementation
-uses
-  DataModule;
 
 {$R *.lfm}
+
+uses DataModule, EmployeeDetailsForm;
 
 { TfrmEmployeeList }
 
@@ -49,18 +50,23 @@ begin
   Close;
 end;
 
-//procedure TfrmEmployeeList.FormShow(Sender: TObject);
-//var
-//  active:boolean;
-//begin
-//  with DM.PgQuerySelect do;
-//    begin
-//      DM.PgQuerySelect.Active:=false;
-//      DM.PgQuerySelect.SQL.Clear;
-//      DM.PgQuerySelect.SQL.Text:= 'SELECT id, last_name, first_name, email_address FROM EMPLOYEES'; //Alternative - sql.add('');
-//      DM.PgQuerySelect.Active:=true;
-//    end;
-//end;
+procedure TfrmEmployeeList.btnCreateClick(Sender: TObject);
+begin
+  frmEmployeeDetails.Caption:= 'Employee Details - Add';
+  frmEmployeeDetails.ShowModal;
+
+end;
+
+procedure TfrmEmployeeList.FormShow(Sender: TObject);
+begin
+  with DM.PgQuerySelect do;
+    begin
+      DM.PgQuerySelect.Active:=false;
+      DM.PgQuerySelect.SQL.Clear;
+      DM.PgQuerySelect.SQL.Text:= 'SELECT id, last_name, first_name, email_address FROM EMPLOYEES'; //Alternative - sql.add('');
+      DM.PgQuerySelect.Active:=true;
+    end;
+end;
 
 end.
 

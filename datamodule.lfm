@@ -1,8 +1,8 @@
 object DM: TDM
   OldCreateOrder = False
   Height = 277
-  HorizontalOffset = 1024
-  VerticalOffset = 537
+  HorizontalOffset = 1140
+  VerticalOffset = 611
   Width = 375
   object Connection: TPgConnection
     Connected = True
@@ -22,5 +22,29 @@ object DM: TDM
     FilterOptions = []
     Left = 141
     Top = 32
+  end
+  object PgQueryInsert: TPgQuery
+    Connection = Connection
+    FilterOptions = []
+    Left = 240
+    Top = 32
+  end
+  object PgQueryUpdate: TPgQuery
+    Connection = Connection
+    SQL.Strings = (
+      ''
+    )
+    FilterOptions = []
+    Left = 141
+    Top = 104
+  end
+  object PgQueryDelete: TPgQuery
+    Connection = Connection
+    SQL.Strings = (
+      ''
+    )
+    FilterOptions = []
+    Left = 240
+    Top = 104
   end
 end

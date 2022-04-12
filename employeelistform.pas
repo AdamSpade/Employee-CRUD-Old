@@ -26,6 +26,7 @@ type
     Panel3: TPanel;
     PgDataSource1: TPgDataSource;
     procedure btnCloseClick(Sender: TObject);
+    procedure btnCreateClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
 
@@ -37,10 +38,10 @@ var
   frmEmployeeList: TfrmEmployeeList;
 
 implementation
-uses
-  DataModule;
 
 {$R *.lfm}
+
+uses DataModule, EmployeeDetailsForm;
 
 { TfrmEmployeeList }
 
@@ -49,9 +50,14 @@ begin
   Close;
 end;
 
+procedure TfrmEmployeeList.btnCreateClick(Sender: TObject);
+begin
+  frmEmployeeDetails.Caption:= 'Employee Details - Add';
+  frmEmployeeDetails.ShowModal;
+
+end;
+
 procedure TfrmEmployeeList.FormShow(Sender: TObject);
-var
-  active:boolean;
 begin
   with DM.PgQuerySelect do;
     begin

@@ -1,11 +1,12 @@
 object frmEmployeeList: TfrmEmployeeList
-  Left = 54
+  Left = 46
   Height = 542
-  Top = 75
+  Top = 56
   Width = 908
   Caption = 'Employee List'
   ClientHeight = 542
   ClientWidth = 908
+  OnShow = FormShow
   LCLVersion = '2.0.12.0'
   object Panel1: TPanel
     Left = 0
@@ -26,6 +27,7 @@ object frmEmployeeList: TfrmEmployeeList
       Color = clWindow
       Columns = <>
       DataSource = PgDataSource1
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
       ParentFont = False
       TabOrder = 0
     end
@@ -46,6 +48,7 @@ object frmEmployeeList: TfrmEmployeeList
       Top = 26
       Width = 75
       Caption = 'Create'
+      OnClick = btnCreateClick
       ParentFont = False
       TabOrder = 0
     end
