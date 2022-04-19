@@ -5,8 +5,8 @@ unit EmployeeDetailsForm;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  PgAccess;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls{,
+  PgAccess};
 
 type
 
@@ -52,6 +52,18 @@ begin
       edtEmployeeFirstName.Clear;
       edtEmployeeLastName.Clear;
       edtEmployeeEmail.Clear;
+    end;
+  else if(Self.Caption = 'Employee Details - Update') then
+    begin
+      with DM.PgQuerySelectDetails do
+        begin
+          DM.PgQuerySelectDetails.Active:=false;
+          DM.PgQuerySelectDetails.SQL.Clear;
+          DM.PgQuerySelectDetails.SQL.Text:= 'SELECT id, last_name, first_name, email_address FROM Employees WHERE id = ' + Self.Hint;
+          DM.PgQuerySelectDetails.Active:=true;
+        end;
+
+      edtEmployeeID.Text:= DM.PgQuerySelectDetails.FieldByName('id').AsString;
     end;
 end;
 

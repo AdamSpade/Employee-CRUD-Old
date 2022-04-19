@@ -5,8 +5,8 @@ unit EmployeeDetailsForm;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  PgAccess;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls{,
+  PgAccess};
 
 type
 
@@ -53,6 +53,10 @@ begin
       edtEmployeeLastName.Clear;
       edtEmployeeEmail.Clear;
     end;
+  else if(Self.Caption = 'Employee Details - Update') then
+    begin
+      with DM.
+    end;
 end;
 
 procedure TfrmEmployeeDetails.btnSaveClick(Sender: TObject);
@@ -65,8 +69,9 @@ begin
             begin
               DM.PgQueryInsert.Active:=false;
               DM.PgQueryInsert.SQL.Clear;
-              DM.PgQueryInsert.SQL.Text:= 'INSERT INTO Employees(first_name, last_name, email_address) ' +
-                                          ' VALUES(' + QuotedStr(edtEmployeeFirstName.Text) + ',' +
+              DM.PgQueryInsert.SQL.Text:= 'INSERT INTO Employees(id, first_name, last_name, email_address) ' +
+                                          ' VALUES(' + QuotedStr(edtEmployeeID.Text) + ',' +
+                                                       QuotedStr(edtEmployeeFirstName.Text) + ',' +
                                                        QuotedStr(edtEmployeeLastName.Text) + ',' +
                                                        QuotedStr(edtEmployeeEmail.Text) + ')';
               ShowMessage(DM.PgQueryInsert.SQL.Text);

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBGrids,
-  StdCtrls, PgAccess;
+  StdCtrls{, PgAccess};
 
 type
 
@@ -27,7 +27,9 @@ type
     PgDataSource1: TPgDataSource;
     procedure btnCloseClick(Sender: TObject);
     procedure btnCreateClick(Sender: TObject);
+    procedure btnUpdateClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure RefreshGrid;
   private
 
   public
@@ -54,16 +56,35 @@ procedure TfrmEmployeeList.btnCreateClick(Sender: TObject);
 begin
   frmEmployeeDetails.Caption:= 'Employee Details - Add';
   frmEmployeeDetails.ShowModal;
+  RefreshGrid;
+end;
 
+procedure TfrmEmployeeList.btnUpdateClick(Sender: TObject);
+begin
+  frmEmployeeDetails.Caption:= 'Employee Details - Update';
+  frmEmployeeDetails.Hint:= DBGrid1.Fields[0].Text;
+  frmEmployeeDetails.ShowModal;
 end;
 
 procedure TfrmEmployeeList.FormShow(Sender: TObject);
 begin
-  with DM.PgQuerySelect do;
+  with DM.PgQuerySelect do
     begin
       DM.PgQuerySelect.Active:=false;
       DM.PgQuerySelect.SQL.Clear;
       DM.PgQuerySelect.SQL.Text:= 'SELECT id, last_name, first_name, email_address FROM EMPLOYEES'; //Alternative - sql.add('');
+      DM.PgQuerySelect.Active:=true;
+    end;
+end;
+
+procedure TfrmEmployeeList.RefreshGrid;
+begin
+  with DM.PgQuerySelect do
+    begin
+      DM.PgQuerySelect.Active:=false;
+      DM.PgQuerySelect.SQL.Clear;
+      DM.PgQuerySelect.SQL.Text:= 'SELECT id, last_name, first_name, email_address ' +
+                                  'FROM Employees WHERE last_name LIKE ' + quotedstr('%' + edt_SearchKeyword.Text + '%');
       DM.PgQuerySelect.Active:=true;
     end;
 end;

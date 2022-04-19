@@ -13,7 +13,10 @@ type
 
   TDM = class(TDataModule)
     Connection: TPgConnection;
+    PgQueryInsert: TPgQuery;
     PgQuerySelect: TPgQuery;
+    PgQueryDelete: TPgQuery;
+    PgQueryUpdate: TPgQuery;
   private
 
   public

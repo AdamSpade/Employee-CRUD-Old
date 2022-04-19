@@ -16,6 +16,7 @@ type
     PgQueryInsert: TPgQuery;
     PgQuerySelect: TPgQuery;
     PgQueryDelete: TPgQuery;
+    PgQuerySelectDetails: TPgQuery;
     PgQueryUpdate: TPgQuery;
   private
 

@@ -1,7 +1,7 @@
 object frmEmployeeDetails: TfrmEmployeeDetails
-  Left = 1105
+  Left = 1154
   Height = 374
-  Top = 94
+  Top = 59
   Width = 477
   Caption = 'Employee Details'
   ClientHeight = 374
